@@ -160,11 +160,11 @@ POST /auth/login
 
 1. Клонировать репозиторий
 
-git clone https://github.com/username/products-dashboard.git
+git clone https://github.com/NickPodguzov993/adminPanelTest.git
 
 2. Перейти в папку проекта
 
-cd products-dashboard
+cd adminPanelTest
 
 3. Установить зависимости
 
