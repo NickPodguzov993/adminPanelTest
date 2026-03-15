@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 import { LoginPage } from "../../pages/login/LoginPage";
 import { ProductsPage } from "../../pages/products/ProductsPage";
 import { ProtectedRoute } from "../../features/auth/ui/ProtectedRoute";
@@ -9,16 +9,21 @@ export const router = createHashRouter([
         element: <LoginPage />,
     },
     {
+        path: "/",
         element: <ProtectedRoute />,
         children: [
             {
-                path: "/",
+                index: true,
                 element: <ProductsPage />,
             },
             {
-                path: "/products",
+                path: "products",
                 element: <ProductsPage />,
             },
         ],
+    },
+    {
+        path: "*",
+        element: <Navigate to="/" replace />,
     },
 ]);
